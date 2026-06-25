@@ -166,20 +166,6 @@ def load_dataset(path):
     return data
 
 
-def export_weights(model, filename="q6_weights.txt"):
-    """Write the three weight matrices, biases as each matrix's last row,
-    separated by a line of dashes, values comma-separated, 4 decimals."""
-    blocks = []
-    for W, b in zip(model.W, model.b):
-        M = np.vstack([W, b])                       # bias becomes the last row
-        rows = [",".join("0.0000" if f"{v:.4f}" == "-0.0000" else f"{v:.4f}"
-                         for v in row) for row in M]
-        blocks.append("\n".join(rows))
-    with open(filename, "w") as f:
-        f.write("\n-----\n".join(blocks))
-    print(f"Wrote {filename}")
-
-
 def main():
     root = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(root, "data")
@@ -223,9 +209,6 @@ def main():
 
     print(f"\nTrain accuracy: {model.accuracy(X_train, y_train):.2f}%")
     print(f"Val   accuracy: {model.accuracy(X_val, y_val):.2f}%")
-
-    # Write the weight matrices for the assignment (Question 5).
-    export_weights(model, os.path.join(root, "q6_weights.txt"))
 
 
 if __name__ == "__main__":
