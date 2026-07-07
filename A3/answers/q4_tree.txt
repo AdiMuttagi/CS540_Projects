@@ -1,0 +1,48 @@
+if (x4 <=2)
+  if (x2 <=5)
+    if (x7 <=4) return 2
+    else
+      if (x6 <=1) return 4
+      else return 2
+  else
+    if (x7 <=1) return 2
+    else return 4
+else
+  if (x7 <=2)
+    if (x6 <=3)
+      if (x2 <=8) return 2
+      else return 4
+    else
+      if (x8 <=3)
+        if (x2 <=5)
+          if (x2 <=3) return 4
+          else return 2
+        else return 4
+      else return 4
+  else
+    if (x7 <=8)
+      if (x2 <=8)
+        if (x8 <=7)
+          if (x10 <=2)
+            if (x4 <=8)
+              if (x4 <=3)
+                if (x8 <=1) return 2
+                else return 4
+              else
+                if (x2 <=3) return 4
+                else
+                  if (x2 <=6)
+                    if (x7 <=3)
+                      if (x8 <=2) return 2
+                      else return 4
+                    else return 2
+                  else
+                    if (x7 <=7)
+                      if (x8 <=5) return 4
+                      else return 2
+                    else return 4
+            else return 4
+          else return 4
+        else return 4
+      else return 4
+    else return 4
